@@ -5,5 +5,12 @@ import { createStackNavigator } from 'react-navigation-stack';
 import { createAppContainer } from 'react-navigation';
 import { createDrawerNavigator, DrawerItems } from 'react-navigation-drawer';
 import { connect } from 'react-redux';
+import { fetchListings } from '../redux/ActionCreators';
+import Catalog from './CatalogComponent';
+import Listing from './ListingComponent';
+
+const mapDispatchToProps = {
+    fetchListings
+};
 
 export default Main;

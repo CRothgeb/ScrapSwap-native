@@ -3,6 +3,7 @@ import { persistStore, persistCombineReducers } from 'redux-persist';
 import storage from 'redux-persist/es/storage';
 import thunk from 'redux-thunk';
 import logger from 'redux-logger';
+import { listings } from './listingsReducer'
 
 const config = {
     key: 'root',
@@ -12,7 +13,9 @@ const config = {
 
 export const ConfigureStore = () => {
     const store = createStore(
-        persistCombineReducers(config, {}),
+        persistCombineReducers(config, {
+            listings,
+        }),
         applyMiddleware(thunk, logger)
     );
 
